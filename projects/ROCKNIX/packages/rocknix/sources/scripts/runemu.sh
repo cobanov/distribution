@@ -629,6 +629,10 @@ if [[ "${DEVICE_HAS_DUAL_SCREEN}" == "true" ]]; then
     swaymsg input "0:0:generic_ft5x06_(a0)" events disabled
     swaymsg input "0:0:generic_ft5x06_(8d)" events disabled
   fi
+  # Sway powers the RG DS second screen on for dual-screen apps, nothing powers it off
+  if [[ "${QUIRK_DEVICE}" == "Anbernic RG DS" || "${QUIRK_DEVICE}" == "Anbernic RG DS Plus" ]]; then
+    swaymsg output "${SDL_VIDEO_DISPLAY_PRIORITY#*,}" power off
+  fi
 fi
 
 ### Go back to system display mode , if we had specialized mode defined
