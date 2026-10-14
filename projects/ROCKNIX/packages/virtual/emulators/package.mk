@@ -1680,6 +1680,7 @@ makeinstall_target() {
   add_emu_core mplayer mplayer mplayer true
   # Note - there is actually no ffmpeg core, it is compiled into retroarch
   add_emu_core mplayer retroarch ffmpeg false
+  add_emu_core mplayer cmp cmp_video false
   add_es_system mplayer
 
   ### Music Player
